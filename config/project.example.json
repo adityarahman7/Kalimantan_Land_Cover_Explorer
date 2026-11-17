@@ -1,0 +1,38 @@
+{
+  "project": "Kalimantan Land Cover Explorer",
+  "region": {
+    "country": "Indonesia",
+    "provinces": ["Kalimantan Barat", "Kalimantan Tengah", "Kalimantan Selatan", "Kalimantan Timur", "Kalimantan Utara"],
+    "boundary_source": "BIG / Ina-Geoportal; source reported by user",
+    "boundary_version": "BATASWILAYAH_KABKOTA_20260601.gdb; official edition date unconfirmed",
+    "boundary_asset_id": "projects/portofolio-513404/assets/batas_admin_gee",
+    "boundary_asset_id_basis": "Read through Earth Engine API on 2026-11-10; 56 district codes match Phase 3 QGIS package",
+    "boundary_working_feature_count": 56,
+    "boundary_completeness_verified": false
+  },
+  "period": {"start": 2010, "end": 2024, "pilot_years": [2010, 2024]},
+  "mapbiomas": {
+    "asset_id": "projects/mapbiomas-public/assets/indonesia/lulc/collection4/mapbiomas_indonesia_collection4_coverage_v2",
+    "documentation_label": "Collection 4",
+    "verified_collection_version": null,
+    "asset_access_verified": true,
+    "verification_basis": "Earth Engine metadata and two native-grid QA windows checked on 2026-11-10",
+    "asset_internal_version": "v2",
+    "verified_band_names": [
+      "classification_2010", "classification_2011", "classification_2012", "classification_2013",
+      "classification_2014", "classification_2015", "classification_2016", "classification_2017",
+      "classification_2018", "classification_2019", "classification_2020", "classification_2021",
+      "classification_2022", "classification_2023", "classification_2024"
+    ]
+  },
+  "analysis": {
+    "area_method": "ee.Image.pixelArea() / 10000; sum on audited native grid",
+    "valid_class_codes": [3, 5, 9, 13, 21, 24, 25, 30, 31, 33, 35, 40, 76],
+    "invalid_class_codes": [27],
+    "masked_and_unlisted_codes_are_invalid": true,
+    "comparison_uses_common_valid_area": true,
+    "crs": "EPSG:4326",
+    "crs_transform": [0.0002694945852358564, 0, 93.51839400103549, 0, -0.0002694945852358564, 7.2919844873118045]
+  },
+  "paths": {"raw": "data/raw", "interim": "data/interim", "processed": "data/processed", "outputs": "outputs"}
+}

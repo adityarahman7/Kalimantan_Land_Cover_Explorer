@@ -1,0 +1,172 @@
+{
+  "project": "portofolio-513404",
+  "mapbiomas_asset": "projects/mapbiomas-public/assets/indonesia/lulc/collection4/mapbiomas_indonesia_collection4_coverage_v2",
+  "boundary_asset": "projects/portofolio-513404/assets/batas_admin_gee",
+  "district_codes": [
+    "61.01",
+    "61.02",
+    "61.03",
+    "61.04",
+    "61.05",
+    "61.06",
+    "61.07",
+    "61.08",
+    "61.09",
+    "61.10",
+    "61.11",
+    "61.12",
+    "61.71",
+    "61.72",
+    "62.01",
+    "62.02",
+    "62.03",
+    "62.04",
+    "62.05",
+    "62.06",
+    "62.07",
+    "62.08",
+    "62.09",
+    "62.10",
+    "62.11",
+    "62.12",
+    "62.13",
+    "62.71",
+    "63.01",
+    "63.02",
+    "63.03",
+    "63.04",
+    "63.05",
+    "63.06",
+    "63.07",
+    "63.08",
+    "63.09",
+    "63.10",
+    "63.11",
+    "63.71",
+    "63.72",
+    "64.01",
+    "64.02",
+    "64.03",
+    "64.07",
+    "64.08",
+    "64.09",
+    "64.11",
+    "64.71",
+    "64.72",
+    "64.74",
+    "65.01",
+    "65.02",
+    "65.03",
+    "65.04",
+    "65.71"
+  ],
+  "province_counts": {
+    "61": 14,
+    "62": 14,
+    "63": 13,
+    "64": 10,
+    "65": 5
+  },
+  "verified_grid_bands": [
+    "classification_2010",
+    "classification_2011",
+    "classification_2012",
+    "classification_2013",
+    "classification_2014",
+    "classification_2015",
+    "classification_2016",
+    "classification_2017",
+    "classification_2018",
+    "classification_2019",
+    "classification_2020",
+    "classification_2021",
+    "classification_2022",
+    "classification_2023",
+    "classification_2024"
+  ],
+  "crs": "EPSG:4326",
+  "grid_transform": [
+    0.0002694945852358564,
+    0,
+    93.51839400103549,
+    0,
+    -0.0002694945852358564,
+    7.2919844873118045
+  ],
+  "preview_band_order": [
+    "class_2010",
+    "class_2024",
+    "valid_2010",
+    "valid_2024",
+    "valid_common",
+    "in_aoi"
+  ],
+  "preview_mask_sentinel": 255,
+  "previews": {
+    "sawit_2024": {
+      "path": "data/processed/phase3_qa/sawit_2024.tif",
+      "point": [
+        116.11180945083655,
+        -2.0012525891793755
+      ],
+      "shape": [
+        128,
+        128
+      ],
+      "transform": [
+        0.0002694945852358564,
+        0,
+        116.09449439541365,
+        0,
+        -0.0002694945852358564,
+        -1.983749641921138
+      ],
+      "qgis_reopened": true,
+      "grid_and_mask_consistency_passed": true,
+      "inside_pixel_count": 16384,
+      "common_valid_pixel_count": 16384,
+      "center_values": {
+        "class_2010": 35,
+        "class_2024": 35,
+        "valid_2010": 1,
+        "valid_2024": 1,
+        "valid_common": 1,
+        "in_aoi": 1
+      }
+    },
+    "perbatasan": {
+      "path": "data/processed/phase3_qa/perbatasan.tif",
+      "point": [
+        114.72883058473096,
+        1.834314894407858
+      ],
+      "shape": [
+        128,
+        128
+      ],
+      "transform": [
+        0.0002694945852358564,
+        0,
+        114.71144818398324,
+        0,
+        -0.0002694945852358564,
+        1.8516972951555708
+      ],
+      "qgis_reopened": true,
+      "grid_and_mask_consistency_passed": true,
+      "inside_pixel_count": 11442,
+      "common_valid_pixel_count": 10821,
+      "center_values": {
+        "class_2010": 255,
+        "class_2024": 255,
+        "valid_2010": 0,
+        "valid_2024": 0,
+        "valid_common": 0,
+        "in_aoi": 1
+      }
+    }
+  },
+  "district_codes_match_qgis": true,
+  "full_rasters_downloaded": false,
+  "full_area_qa_basis": "Phase 2 exported coverage; Phase 3 verifies asset metadata, codes and two native-grid windows"
+}

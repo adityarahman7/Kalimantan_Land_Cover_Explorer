@@ -1,0 +1,71 @@
+# Rahasia dan konfigurasi lokal
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*service-account*.json
+*service_account*.json
+credentials.json
+token.json
+config/*.local.json
+.credentials/
+.config/earthengine/
+
+# Data produksi; pertahankan penanda folder
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+/web/public/data/r1/
+/web/public/data/r2/
+*.qgz~
+
+# Raster dan arsip besar di lokasi mana pun
+*.tif
+*.tiff
+*.vrt
+*.img
+*.gpkg
+*.gdb/
+*.zip
+*.7z
+*.tar
+*.gz
+*.parquet
+*.mbtiles
+*.pmtiles
+
+# Lingkungan Python dan cache
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+
+# Aplikasi web dan hasil build
+node_modules/
+dist/
+.next/
+.cache/
+coverage/
+
+# Berkas pribadi/editor/sistem
+.codex/
+.agents/
+.aws/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+*.tmp
+*.bak

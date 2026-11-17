@@ -1,0 +1,33 @@
+{
+  "checked_on": "2026-11-17",
+  "results": [
+    {
+      "browser": "Edge",
+      "version": "157.0.4341.60",
+      "status": "passed",
+      "initial_ready_local_ms": 1214
+    },
+    {
+      "browser": "Chrome",
+      "version": "157.0.8103.79",
+      "status": "passed",
+      "initial_ready_local_ms": 1163
+    }
+  ],
+  "years_tested": 15,
+  "representative_pairs": [
+    "2010_2024",
+    "2010_2011",
+    "2014_2021",
+    "2023_2024"
+  ],
+  "viewport_widths": [
+    320,
+    390,
+    768,
+    1366
+  ],
+  "limitation": "Local headless Chromium browsers. Not physical devices or hosting performance.",
+  "r1_fallback_and_malformed_r2_manifest": "passed",
+  "year_navigation_buttons": "passed"
+}

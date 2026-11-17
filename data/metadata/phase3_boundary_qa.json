@@ -1,0 +1,44 @@
+{
+  "source": "data/interim/batas_admin_gee/batas_admin_kalimantan.shp",
+  "crs": "EPSG:4326",
+  "boundary_scope": "56-feature working extent; source island without district identifier excluded",
+  "overlap_within_province_square_degrees": {
+    "61": 5.524469770534779e-13,
+    "62": 0.0,
+    "63": 0.0,
+    "64": 0.0,
+    "65": 0.0
+  },
+  "overlap_between_provinces_square_degrees": 0.0,
+  "overlap_method": "max(0, sum of component planar areas minus dissolved planar area); diagnostic only",
+  "gap_completeness_verified": false,
+  "layers": {
+    "kabupaten_kota": {
+      "feature_count": 56,
+      "valid_geometries": 56,
+      "fields": [
+        "district_id",
+        "district_name",
+        "province_id",
+        "province_name"
+      ]
+    },
+    "provinsi": {
+      "feature_count": 5,
+      "valid_geometries": 5,
+      "fields": [
+        "province_id",
+        "province_name"
+      ]
+    },
+    "aoi": {
+      "feature_count": 1,
+      "valid_geometries": 1,
+      "fields": [
+        "aoi_id",
+        "aoi_name"
+      ]
+    }
+  },
+  "qgis_project_reopened": true
+}

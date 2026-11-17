@@ -1,0 +1,57 @@
+{
+  "aoi": {
+    "region_level": "aoi",
+    "region_id": "KALIMANTAN_ID",
+    "region_name": "Kalimantan Indonesia",
+    "province_id": "",
+    "year_from": 2010,
+    "year_to": 2024,
+    "aoi_ha": 53435434.02661348,
+    "valid_2010_ha": 53426361.22924391,
+    "valid_2024_ha": 53426510.19191055,
+    "valid_common_ha": 53426346.60492304,
+    "stable_ha": 42951542.396412514,
+    "changed_ha": 10474804.208510526,
+    "not_comparable_ha": 9087.421690444373,
+    "changed_pct_common": 19.606064936405946
+  },
+  "districts": 56,
+  "provinces": 5,
+  "annual_rows": 1612,
+  "transition_rows": 10478,
+  "aoi_minus_phase2_ha": {
+    "aoi_ha": -0.008729375898838043,
+    "valid_2010_ha": -0.008727781474590302,
+    "valid_2024_ha": -0.008727870881557465,
+    "valid_common_ha": -0.008727788925170898
+  },
+  "audit_tolerance_ha": 1.0,
+  "district_sum_minus_aoi_ha": {
+    "aoi_ha": 6839.51361002028,
+    "valid_2010_ha": 6839.426437526941,
+    "valid_2024_ha": 6839.426437519491,
+    "valid_common_ha": 6839.426437519491,
+    "stable_ha": 5781.291781641543,
+    "changed_ha": 1058.1346558779478,
+    "not_comparable_ha": 0.08717249606343103
+  },
+  "aggregation_tolerance_fraction_of_aoi": 0.001,
+  "overview": {
+    "role": "categorical display overview at 10x native pixel spacing; not used for area statistics",
+    "path": "data/processed/phase4_change_overview_300m.tif",
+    "crs": "EPSG:4326",
+    "dimensions": [
+      3879,
+      3478
+    ],
+    "tiles": 30,
+    "pixel_counts_display_only": {
+      "0": 4880079,
+      "1": 1122220,
+      "2": 1595,
+      "255": 7487268
+    },
+    "qgis_project": "Kalimantan_Land_Cover_Explorer.qgz",
+    "qgis_reopened": true
+  }
+}

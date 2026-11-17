@@ -1,0 +1,12 @@
+{
+  "checked_on": "2026-11-17",
+  "status": "passed",
+  "regions": 62,
+  "years": 15,
+  "pairs": 105,
+  "tolerance_ha": 0.01,
+  "annual_cells": 12090,
+  "transition_cells": 1100190,
+  "r1_csv_regression": "passed",
+  "raster_byte_lengths_and_codes": "passed"
+}

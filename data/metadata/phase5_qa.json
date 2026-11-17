@@ -1,0 +1,16 @@
+{
+  "endpoint": "loopback HTTP",
+  "successful_files": 67,
+  "total_bytes": 4611311,
+  "first_view": {
+    "bytes": 2747396,
+    "ms": 72.2
+  },
+  "elapsed_ms": 881.3,
+  "checked_regions": 62,
+  "decode_and_error_checks": "passed",
+  "raster_change_mismatch_pixels": 0,
+  "qgis_main": "Kalimantan_Land_Cover_Explorer.qgz",
+  "qgis_layers_and_tables": 19,
+  "qgis_reopened": true
+}
