@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Dashboard peta dan statistik tutupan lahan Kalimantan Indonesia, 2010–2024.">
+  <title>Kalimantan Land Cover Explorer</title>
+  <link rel="stylesheet" href="./style.css?v=dark-5">
+</head>
+<body>
+  <a class="skip-link" href="#explorer">Langsung ke dashboard</a>
+  <header class="masthead">
+    <a class="brand" href="./" aria-label="Kalimantan Land Cover Explorer, beranda"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="m5 20 11-14 11 14H5Z" stroke="currentColor" stroke-width="1.8"/><path d="m5 26 11-14 11 14H5Z" fill="currentColor"/><path d="M16 26v4" stroke="currentColor" stroke-width="2"/></svg></span><span><h1>Kalimantan <span>Land Cover Explorer</span></h1><span class="brand-sub">DASHBOARD TUTUPAN LAHAN · INDONESIA</span></span></a>
+    <div class="header-actions"><div class="unit-control"><label for="area-unit">Satuan luas</label><select id="area-unit"><option value="km2">km²</option><option value="ha">ha</option></select></div><span class="edition"><span class="status-dot" aria-hidden="true"></span> 2010–2024</span><button id="reset" type="button" class="text-button" aria-label="Atur ulang dashboard">↺ <span>Atur ulang</span></button><button id="about-link" type="button" class="about-button" aria-label="Tentang data">ⓘ <span>Tentang data</span></button></div>
+  </header>
+  <main>
+    <p id="startup" class="notice" role="status">Menyiapkan peta dan statistik wilayah…</p>
+    <p id="data-availability" class="availability" hidden>Anda melihat pilot 2010 &amp; 2024. Paket tahunan R2 belum tersedia; grafik hanya menghubungkan dua tahun pengamatan.</p>
+    <section class="filterbar panel" aria-label="Pengaturan dashboard" id="filters" hidden>
+      <div class="filter-field"><label for="province">Provinsi</label><select id="province"><option value="">Seluruh Kalimantan</option></select></div>
+      <div class="filter-field"><label for="district">Kabupaten / kota</label><select id="district" disabled aria-describedby="district-hint"><option value="">Semua kabupaten/kota</option></select><span id="district-hint" class="sr-only">Pilih provinsi untuk melihat kabupaten/kota.</span></div>
+      <div class="filter-field mode-field"><label for="mode">Tampilan peta</label><select id="mode" aria-describedby="mode-help"><option value="annual">Tutupan lahan</option><option value="change">Perubahan antartahun</option></select><span id="mode-help" class="sr-only">Lihat jenis tutupan lahan pada satu tahun.</span></div>
+      <div id="annual-controls" class="filter-field year-field"><label for="year">Tahun pengamatan</label><div class="year-picker"><button id="year-prev" type="button" aria-label="Tahun sebelumnya">←</button><select id="year"></select><button id="year-next" type="button" aria-label="Tahun berikutnya">→</button></div></div>
+      <div id="transition-controls" class="transition-filters" hidden>
+        <div class="filter-field"><label for="year-from">Tahun awal</label><select id="year-from"></select></div>
+        <div class="filter-field"><label for="year-to">Tahun akhir</label><select id="year-to"></select></div>
+        <div class="filter-field"><label for="from">Kelas asal</label><select id="from"></select></div>
+        <div class="filter-field"><label for="to">Kelas tujuan</label><select id="to"></select></div>
+      </div>
+      <p class="filter-tip">Pilih wilayah untuk menyinkronkan<br>peta, indikator, dan grafik.</p>
+    </section>
+    <div id="explorer" class="workspace" hidden>
+      <aside class="overview panel" aria-labelledby="stats-title">
+        <div class="panel-heading"><p class="eyebrow">RINGKASAN WILAYAH</p><h2 id="stats-title">Kalimantan Indonesia</h2></div>
+        <p id="stats-status" role="status"></p>
+        <div id="cards" class="cards"></div>
+        <p id="insight" class="insight" hidden></p>
+        <details class="legend" open><summary>Legenda peta <span class="field-hint">Arti warna</span></summary><ul id="legend"></ul></details>
+      </aside>
+      <section class="panel map-panel" aria-labelledby="map-title">
+        <div class="map-heading"><div><p class="eyebrow">PETA INTERAKTIF</p><h2 id="map-title"></h2></div><span id="map-mode" class="badge"></span></div>
+        <div class="map-viewport">
+          <canvas id="map" aria-label="Peta tutupan lahan. Gunakan tombol untuk memperbesar atau mengecilkan peta." role="img"></canvas>
+          <div class="map-tools" aria-label="Navigasi peta"><button id="zoom-in" type="button" aria-label="Perbesar peta">+</button><button id="zoom-out" type="button" aria-label="Perkecil peta">−</button><button id="fit" type="button" title="Kembalikan peta ke seluruh wilayah terpilih" aria-label="Pas wilayah">⌖</button></div>
+          <span class="zoom-level" title="Perbesaran relatif terhadap tampilan pas wilayah">1×</span><span class="north" aria-hidden="true">↑<br>U</span><span class="map-instruction">Gulir untuk zoom <span>· Geser untuk menjelajah</span></span>
+        </div>
+        <p class="map-foot"><span>MapBiomas Indonesia · BIG</span><span id="basemap-status">Memuat basemap konteks…</span></p>
+      </section>
+      <section class="panel composition" aria-labelledby="composition-title">
+        <div class="panel-heading"><p class="eyebrow">DETAIL TUTUPAN LAHAN</p><h2 id="composition-title">Komposisi wilayah</h2><p id="chart-note" class="muted"></p></div>
+        <div class="composition-body"><div id="composition-bars" class="composition-bars" aria-label="Proporsi luas per kelas"></div>
+        <details class="data-details" open><summary>Persentase terbesar → terkecil</summary><div id="stats-table" class="table-wrap" hidden><table><thead><tr><th id="table-label" scope="col">Kelas</th><th id="area-column" scope="col">Luas (km²)</th><th scope="col">Proporsi</th></tr></thead><tbody id="rows"></tbody></table></div></details></div>
+      </section>
+      <section class="panel trend" aria-labelledby="trend-title">
+        <div class="trend-heading"><div><p class="eyebrow">PERKEMBANGAN 2010–2024</p><h2 id="trend-title">Tren luas tutupan lahan</h2></div><div class="chart-filter"><label for="chart-class">Kelas pengamatan</label><select id="chart-class"></select></div></div>
+        <p class="chart-hint">Pilih titik tahun untuk memperbarui peta. <span id="trend-scope"></span></p>
+        <div id="trend-chart"></div>
+        <details class="trend-data"><summary>Data grafik dan cakupan valid</summary><div class="table-wrap"><table><thead><tr><th>Tahun</th><th>Luas kelas (ha)</th><th>Area valid (ha)</th><th>Proporsi kelas</th><th>Cakupan valid</th></tr></thead><tbody id="trend-rows"></tbody></table></div></details>
+      </section>
+    </div>
+    <details class="panel metadata" id="metadata" hidden>
+      <summary>Sumber, metode, dan keterbatasan <span class="field-hint">Kenali data di balik peta ini</span></summary>
+      <p>Peta tahunan 2010–2024 berasal dari MapBiomas Indonesia, direktori Collection 4 dengan versi internal v2. Identitas Koleksi 4.1 belum terkonfirmasi. Aset Earth Engine diperiksa kembali pada 17 November 2026. Penyedia menyatakan lisensi CC-BY-SA. <a href="https://landy.mapbiomas.id/en/legendcode">Legenda dan kode kelas MapBiomas Indonesia</a>.</p>
+      <p>Batas kerja BIG berasal dari <code>BATASWILAYAH_KABKOTA_20260601.gdb</code>, diunduh 1 November 2026 melalui Ina-Geoportal. Pilot mencakup 56 kabupaten/kota. Kelengkapan cakupan dan ketentuan distribusi masih perlu diverifikasi. <a href="https://tanahair.indonesia.go.id/portal-web/">Ina-Geoportal</a>.</p>
+      <p>Basemap konteks daratan dan laut memakai garis pantai <a href="https://www.naturalearthdata.com/downloads/10m-physical-vectors/">Natural Earth, skala 1:10 juta</a> yang disederhanakan untuk tampilan regional. Basemap ini bukan input analisis atau acuan batas rinci. Satuan tampilan dapat dipilih km² atau ha; nilai sumber disimpan dalam ha dan 1 km² = 100 ha.</p><p>Statistik memakai luas piksel pada grid sumber sekitar 30 m. Proporsi kelas tahunan dihitung terhadap area valid tahun tersebut. Proporsi perubahan dan transisi memakai area valid pada kedua tahun. Piksel yang datanya tidak valid pada salah satu tahun masuk kategori tidak dapat dibandingkan. Peta sekitar 300 m dan batas tampilan disederhanakan, sehingga detail kecil dapat berbeda dari angka luas.</p>
+    </details>
+    <footer class="site-footer"><span id="data-release">Kalimantan Land Cover Explorer</span><span>Statistik ~30 m · Peta ~300 m <span class="footer-separator">|</span> <span id="selection-caption">Kalimantan Indonesia</span></span></footer>
+  </main>
+  <script type="module" src="./app.mjs?v=dark-5"></script>
+</body>
+</html>
