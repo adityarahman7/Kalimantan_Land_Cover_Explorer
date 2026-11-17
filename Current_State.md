@@ -2,6 +2,16 @@
 
 Updated: 2026-11-17 (Asia/Jakarta)
 
+## Publikasi dashboard GitHub Pages — 17 November 2026
+
+- Permintaan pengguna: menerbitkan dashboard melalui tautan publik. Repositori kini teramati publik pada GitHub; pengaturan ini sudah berubah dari status privat saat dibuat.
+- Cabang `gh-pages` memuat `index.html` di akar, modul/CSS dashboard, `.nojekyll`, basemap, dan 81 berkas paket R2 (sekitar 31 MB). Cabang `main` tetap menyimpan kode proyek dan dokumentasi.
+- Pengaturan Pages diubah dari `main /` menjadi `gh-pages /`. URL: https://adityarahman7.github.io/Kalimantan_Land_Cover_Explorer/.
+- Skrip `scripts/build_github_pages.mjs` memeriksa 15 raster tahunan, 62 ID statistik, serta jalur berkas manifest sebelum mengemas `.pages-build/`. Panduan pembaruan: `docs/github_pages.md`.
+- Build/deployment GitHub berhasil untuk commit `0f1f198` di `gh-pages`. QA Chrome pada URL publik berhasil memuat peta, statistik, 15 pilihan tahun dan grafik; tahun 2016, Sambas, perubahan 2014–2021 hutan → sawit, satuan km²/ha dan atur ulang diperiksa. Filter transisi Sambas menampilkan 25,15 km² (0,42%). Log galat browser yang diperiksa kosong. Bukti: `outputs/ui/github-pages-public.png`.
+- QA publik ini berupa pemeriksaan fungsi representatif, bukan pengujian ulang seluruh kombinasi atau perangkat fisik. Izin/ketentuan distribusi batas, identitas versi sumber dan akurasi klasifikasi tetap terbuka; panel sumber dan keterbatasan dipertahankan.
+- Berikutnya: kumpulkan masukan pengguna; perubahan kode `main` perlu dikemas serta di-push kembali ke `gh-pages` agar tampil di website.
+
 ## Penyimpanan GitHub — 17 November 2026
 
 - Repositori privat dibuat di [adityarahman7/Kalimantan_Land_Cover_Explorer](https://github.com/adityarahman7/Kalimantan_Land_Cover_Explorer), dengan cabang utama `main`.

@@ -1,5 +1,7 @@
 # Kalimantan Land Cover Explorer
 
+**[Buka dashboard publik](https://adityarahman7.github.io/Kalimantan_Land_Cover_Explorer/)** · [Panduan publikasi GitHub Pages](docs/github_pages.md). Website diterbitkan dari cabang `gh-pages`; kode proyek berada di `main`.
+
 WebGIS untuk mengeksplorasi tutupan lahan dan perubahannya di seluruh Kalimantan wilayah Indonesia. Proyek ini dikembangkan sebagai portofolio GIS Developer, mulai dari audit data raster, analisis perubahan, hingga penyajian hasil melalui aplikasi web.
 
 > **Status R2 tersedia secara lokal.** [Jalankan WebGIS](web/README.md) untuk menjelajahi peta dan grafik 2010–2024 serta perbandingan 105 pasangan tahun. [Laporan R2](docs/r2_execution.md) dan [Current State](Current_State.md) mencatat hasil validasi dan keterbatasannya.
@@ -72,7 +74,7 @@ Folder dengan `.gitkeep` sengaja disiapkan agar ikut tersimpan dalam Git meskipu
 
 ## Memulai
 
-**Catatan clone GitHub:** data produksi dan paket WebGIS `web/public/data/r1/` serta `r2/` tidak disertakan. Menjalankan server saja pada clone baru belum cukup untuk menampilkan dashboard; siapkan kembali paket data sesuai [panduan WebGIS](web/README.md). Repositori ini menyimpan kode dan dokumentasi, bukan deployment website.
+**Catatan clone cabang `main`:** data produksi dan paket WebGIS `web/public/data/r1/` serta `r2/` tidak disertakan pada cabang ini. Menjalankan server saja pada clone `main` belum cukup untuk menampilkan dashboard; siapkan kembali paket data sesuai [panduan WebGIS](web/README.md). Cabang `gh-pages` menyertakan paket tampilan R2 dan dapat langsung disajikan sebagai website statis.
 
 Panduan fungsi setiap berkas tersedia di [panduan struktur proyek](docs/project_structure.md).
 
